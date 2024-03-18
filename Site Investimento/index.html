@@ -1,0 +1,104 @@
+<html>
+<!--////////////////////////////// TÍTULO DA PÁGINA //////////////////////////////-->  
+<title>Invest - A empresa que você confia</title>
+
+<!--////////////////////////////// LINKS CSS ////////////////////////////////////-->
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style-gabriel.css">
+	<link rel="stylesheet" href="style-gustavo.css">
+	<link rel="icon" href="Imagens/logo2.png" type="image/icon type">
+</head>
+
+    
+<!--////////////////////////////// TOPO DA PÁGINA //////////////////////////////-->
+<body>
+<section class="menu-horizontal">
+    <div class="topo">
+
+        <div class="image-topo">
+            <a href="index.html"><img src="Imagens/logo.png"></a>
+        </div>
+
+        <div class="links-topo">
+            <div><a href="sobre.html">Sobre</a></div>
+            <div><a href="contato.html">Contato</a></div>
+            <div><a href="duvida.html">Dúvidas</a></div>
+            <div><a href="calculadora.html">Calculadora</a></div>
+            <div><a href="grafico.html">Gráficos</a></div>
+        </div>
+
+    </div>
+</section>
+
+
+<!--////////////////////////////// CORPO PÁGINA ////////////////////////////////-->
+<section class="boxIndex1">
+
+    <div class="slotIndex-1">
+
+        <div class="venhaIndex"><b>Bem-vindo à Invest</b>
+        
+            <br>
+            <a class="subIndex1">Seu Portal para o Mundo dos Investimentos</a>
+        
+        </div>
+
+        <div class="venhaIndex-context">
+
+            <img src="Imagens/fincanceiro.png"></a>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="boxIndex3">
+
+    <div class="slotIndex-3">
+
+        <div class="slider">
+
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+
+                <div class="slide first"><div class="po1"></div></div>
+                <div class="slide"><div class="po2"></div></div>
+                <div class="slide"><div class="po3"></div></div>
+                <div class="slide"><img src="imagens/investimento4.png" alt=""></div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--////////////////////////////// FOOTER ////////////////////////////////-->
+<footer>
+    <div class="footer">
+        Copyright © 2023 Invest.com  CNPJ: 12.345.678/9123-45
+    </div>
+</footer>
+</body>
+
+
+<!--////////////////////////////// SCRPITS ////////////////////////////////-->
+<script>
+    var counter = 1;
+    document.getElementById('radio'+ counter).checked = true;
+    setInterval(function()  
+    {
+        counter++; 
+        document.getElementById('radio'+ counter).checked = true;
+
+        if(counter>=4){
+            counter=0
+        }
+    }, 2500);
+  </script>
+
+  
+</html>
