@@ -1,0 +1,224 @@
+<html>
+<!--////////////////////////////// TÍTULO DA PÁGINA //////////////////////////////-->  
+<title>Invest - A empresa que você confia</title>
+
+<!--////////////////////////////// LINKS CSS ////////////////////////////////////-->
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style-gabriel.css">
+	  <link rel="stylesheet" href="style-gustavo.css">
+	  <link rel="icon" href="Imagens/logo2.png" type="image/icon type">
+
+    <style>
+      .customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      .customers td, .customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      
+      .customers tr:nth-child(even){background-color: #f2f2f2;}
+      
+      .customers tr:hover {background-color: #ddd;}
+      
+      .customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+      }
+
+      button#calculate {
+        height: 2vw;
+        width: 6vw;
+}
+      </style>
+
+    
+</head>
+
+    
+<!--////////////////////////////// TOPO DA PÁGINA //////////////////////////////-->
+<body>
+<section class="menu-horizontal">
+    <div class="topo">
+
+        <div class="image-topo">
+            <a href="index.html"><img src="Imagens/logo.png"></a>
+        </div>
+
+        <div class="links-topo">
+          <div><a href="sobre.html">Sobre</a></div>
+          <div><a href="contato.html">Contato</a></div>
+          <div><a href="duvida.html">Dúvidas</a></div>
+          <div><a href="calculadora.html">Calculadora</a></div>
+          <div><a href="grafico.html">Gráficos</a></div>
+        </div>
+
+    </div>
+</section>
+
+
+<!--////////////////////////////// CORPO PÁGINA ////////////////////////////////-->
+<section class="boxContato1">
+
+  <div class="slotContato-1">
+
+      <div class="venhaContato"><b>Calculadora<br>CDI</b>
+  
+      
+      </div>
+
+  </div>
+</section>
+
+<section class="boxCalculadora3">
+
+  
+
+  <div class="fundoForm">
+
+    <div class="contentForm">
+
+      <div class="tituloForm">Calculadora</div>
+      <a>Informe o investimento inicial. (7,76% ao ano)</a>
+
+      <div class="formulario">
+        
+
+        <form id="calculator">
+
+          <!-- Email Input -->
+          <div class="emailForm">
+            <div class="emailInput">
+              <label for="principal">Investimento:</label>
+              <input type="number" id="principal" placeholder="1.000" required><br>
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div style="display:none;" class="emailForm">
+            <div class="emailInput">
+              <label for="annualRate">Taxa de Juros:</label>
+              <input type="number" id="annualRate" value="7.76" required><br>
+            </div>
+          </div>
+
+          <!-- Telefone Input -->
+          <div style="display:block;" class="emailForm">
+            <div class="emailInput">
+              <label for="time">Tempo (anos):</label>
+              <input type="number" id="time" value="" placeholder="3" required><br>
+            </div>
+          </div>
+
+          <div class="SubmitForm">
+            <div class="submitInput">
+              <button type="button" id="calculate">Calcular Juros</button>
+            </div>
+          </div>
+
+          
+
+        </form> 
+
+        <h2>Resultado:</h2>
+        <div id="result">
+          <table class="customers">
+            <tr>
+              <td>Anos</td>
+              <td>Juros</td>
+              <td>Montante</td>
+              <td>Lucro</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!--////////////////////////////// FOOTER ////////////////////////////////-->
+<footer>
+    <div class="footer">
+        Copyright © 2023 Invest.com  CNPJ: 12.345.678/9123-45
+    </div>
+</footer>
+</body>
+
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+      const calculatorForm = document.getElementById("calculator");
+      const principalInput = document.getElementById("principal");
+      const annualRateInput = document.getElementById("annualRate");
+      const timeInput = document.getElementById("time");
+      const resultDiv = document.getElementById("result");
+
+      var an = "anos";
+
+
+  
+      function calculateCompoundInterest() {
+          const principal = parseFloat(principalInput.value);
+          const annualRate = parseFloat(annualRateInput.value) / 100; // Converter a taxa de juros anual para decimal
+          const time = parseFloat(timeInput.value);
+  
+          const monthlyRate = annualRate / 12;
+          const months = time * 12;
+  
+          const amount = principal * Math.pow(1 + monthlyRate, months);
+          const interest = amount - principal;
+
+          if (time == 1){
+             an = "ano";
+            }else{
+              an = "anos";
+            }
+  
+          resultDiv.innerHTML = `
+          
+          <table class="customers">
+          <tr>
+            <td>Anos</td>
+            <td>Juros</td>
+            <td>Montante</td>
+            <td>Lucro</td>
+          </tr>
+          <tr>
+            <td>${time}</td>
+            <td>7,76%</td>
+            <td>${amount.toFixed(2)}</td>
+            <td>${interest.toFixed(2)}</td>
+          </tr>
+        </table>
+         `;
+      }
+  
+      const calculateButton = document.getElementById("calculate");
+      calculateButton.addEventListener("click", calculateCompoundInterest);
+  });
+
+  
+  
+    </script>
+
+  
+</html>

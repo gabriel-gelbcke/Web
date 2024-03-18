@@ -1,0 +1,43 @@
+.vertical{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 3.5vw;
+    text-align: center;
+}
+
+.vertical > div {
+    font-size: 19px; 
+    text-align: center;
+    padding-bottom: 2.5vw;
+}
+
+.grafico{
+    width: 60px;
+    background-color: #007f7f;
+    
+}
+
+.titulo-grafico{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #190564;
+}
+
+.texto-grafico{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    padding-top: 2vw;
+    color: #190564;
+}
+
+.boxGrafico3{
+    justify-content: center;
+    align-items: center;
+    height: 21vw;
+  }
